@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct TodoSwiftApp: App {
-    var body: some Scene {
-        WindowGroup {
+    init() {// This is like constructor
+        print("✅ Hello, World! SwiftUI app is launching...") // N:1
+    }
+
+    // Defines the UI structure
+    var body: some Scene {// this like render()
+        WindowGroup {// This like react-router - React Router for Multi-Screen Apps
             ContentView()
+                .onAppear {// this like componentDidMount
+                    print("📌 ContentView has appeared!")// N: 4
+                }
         }
     }
 }
