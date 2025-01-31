@@ -1,5 +1,27 @@
 import SwiftUI
 
+
+/*
+ https://docs-assets.developer.apple.com/published/ce0ca452c3bcccf11149a8728f1c489f/Building-Layouts-with-Stack-Views-1@2x.png
+ HStack {}    Horizontal (Row)    display: flex; flexDirection: "row"
+ VStack {}    Vertical (Column)    display: flex; flexDirection: "column"
+ ZStack {}    Overlapping views    position: absolute; top/left
+ 
+ Example:
+ HStack {
+     Text("Task 1")
+     Text("Task 2")
+     Text("Task 3")
+ }
+ 
+ React Equivalent (Using Flexbox)
+ <div style={{ display: "flex", flexDirection: "row" }}>
+     <p>Task 1</p>
+     <p>Task 2</p>
+     <p>Task 3</p>
+ </div>
+*/
+
 struct TaskListView: View {
     @ObservedObject var viewModel: TodoViewModel
     @State private var newTaskTitle = ""  // ✅ State for input field
@@ -7,7 +29,7 @@ struct TaskListView: View {
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
+                HStack {//Horizontal (Row): HStack is similar to a div with display: flex; flexDirection: "row".
                     TextField("Enter new task", text: $newTaskTitle)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding()

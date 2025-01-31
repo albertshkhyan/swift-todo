@@ -1,7 +1,13 @@
 import SwiftUI
 import Foundation // import for recognized IndexSet, UserDefaults, UUID, Codable
 
-class TodoViewModel: ObservableObject {
+
+/*
+ 📝 Understanding TodoViewModel in Swift with React Analogy
+ In Swift, TodoViewModel is an ObservableObject, meaning it manages the state of the todo list and notifies the UI when changes occur. It is similar to React's State Management (like useState, useReducer, or even a Redux store).
+*/
+
+class TodoViewModel: ObservableObject {// ObservableObject - like Context API:
     @Published var todos: [TodoItem] = [TodoItem(title: "Sample Task")]  // ✅ Added default task
 
     private let persistence = PersistenceService()

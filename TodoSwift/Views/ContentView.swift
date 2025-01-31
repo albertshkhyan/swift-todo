@@ -1,16 +1,17 @@
 import SwiftUI
 
+// In React, ContentView.swift is similar to App.js
 struct ContentView: View {
     @StateObject var viewModel = TodoViewModel()
 
     var body: some View {
-        NavigationView {
+        NavigationView {// in react, similar to BrowserRouter
             VStack {
                 Text("📝 Todo App - Home Screen")
                     .font(.largeTitle)
                     .padding()
 
-                NavigationLink(destination: TestView()) {
+                NavigationLink(destination: TestView()) {// Works like <Link to="/test">
                     Text("➡️ Go to Test View")
                         .foregroundColor(.white)
                         .padding()
