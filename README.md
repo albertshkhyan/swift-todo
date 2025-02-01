@@ -3,6 +3,11 @@ Here’s a **simplified and cleaned-up** version of your README:
 
 # **TodoSwift** – A Simple Todo App in SwiftUI 🚀
 
+## 📚 Learn More About MVVM
+
+For a detailed explanation of the MVVM structure, check out the [MVVM Structure Guide](./MVVM_Structure_Guide.md).
+
+
 ## **🛠 Stage 1: Initial Screen & Todo Logic**
 - Designed a **clean UI** for the **Home Screen**.
 - Implemented a **Todo List** with:

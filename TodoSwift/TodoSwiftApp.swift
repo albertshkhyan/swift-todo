@@ -12,3 +12,7 @@ struct TodoSwiftApp: App {// struct is lightweight, value-type alternative to cl
         }
     }
 }
+
+#Preview {
+    MainView() // This will render the app's starting screen
+}

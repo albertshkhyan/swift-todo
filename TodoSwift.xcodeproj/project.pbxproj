@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B6084D222D4D964E00E4F9B9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B6084D212D4D964E00E4F9B9 /* README.md */; };
+		B6084D562D4DBC1F00E4F9B9 /* MVVM_Structure_Guide.md in Resources */ = {isa = PBXBuildFile; fileRef = B6084D552D4DBC1F00E4F9B9 /* MVVM_Structure_Guide.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,7 @@
 		B6084CBA2D4C247400E4F9B9 /* TodoSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6084CC42D4C247400E4F9B9 /* TodoSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6084D212D4D964E00E4F9B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B6084D552D4DBC1F00E4F9B9 /* MVVM_Structure_Guide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MVVM_Structure_Guide.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -85,6 +87,7 @@
 		B6084CA02D4C247200E4F9B9 = {
 			isa = PBXGroup;
 			children = (
+				B6084D552D4DBC1F00E4F9B9 /* MVVM_Structure_Guide.md */,
 				B6084D212D4D964E00E4F9B9 /* README.md */,
 				B6084CAB2D4C247200E4F9B9 /* TodoSwift */,
 				B6084CBD2D4C247400E4F9B9 /* TodoSwiftTests */,
@@ -225,6 +228,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6084D562D4DBC1F00E4F9B9 /* MVVM_Structure_Guide.md in Resources */,
 				B6084D222D4D964E00E4F9B9 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,47 +1,53 @@
 import SwiftUI
-import Foundation // import for recognized IndexSet, UserDefaults, UUID, Codable
-
+import Foundation // Required for IndexSet, UserDefaults, UUID, Codable
 
 /*
- 📝 Understanding TodoViewModel in Swift with React Analogy
- In Swift, TodoViewModel is an ObservableObject, meaning it manages the state of the todo list and notifies the UI when changes occur. It is similar to React's State Management (like useState, useReducer, or even a Redux store).
+ 📝 **TodoViewModel in Swift = React State Management (like Context API, useReducer, or Redux)**
+
+ - **ObservableObject** = React’s **Context API Provider** or global state manager.
+ - **@Published** = Triggers UI updates, similar to React's **useState** or **useReducer**.
+ - **PersistenceService** = Acts like **localStorage** in React for data persistence.
 */
 
-class TodoViewModel: ObservableObject {// ObservableObject - like Context API:
-    @Published var todos: [TodoItem] = [TodoItem(title: "Sample Task")]  // ✅ Added default task
+// This is like useTodoViewModel
+class TodoViewModel: ObservableObject { // 🧠 Global state management (like Context API Provider)
+    @Published var todos: [TodoItem] = [TodoItem(title: "Sample Task")]  // ✅ Default task like useState(["Sample Task"])
 
-    private let persistence = PersistenceService()
+    private let persistence = PersistenceService() // For saving/loading tasks (like localStorage)
 
     init() {
-        print("✅ TodoViewModel initialized") // N:2
-        todos = persistence.load()
-        print("📌 Loaded todos: \(todos)")// N:3
+        print("✅ TodoViewModel initialized")
+        todos = persistence.load()  // 🚀 Load saved tasks when the app starts
+        print("📌 Loaded todos: \(todos)")
     }
 
-    func addTodo(title: String) {
+    func addTodo(title: String) { // ➕ Add new task
         let newTodo = TodoItem(title: title)
-        todos.append(newTodo)
+        todos.append(newTodo)  // ✅ Updates the list (like setState([...prev, newTask]))
         print("✅ Task Added: \(title)")
-        saveTodos()
+        saveTodos()  // 💾 Save changes to persistence
     }
 
-    func toggleCompletion(todo: TodoItem) {
-        if let index = todos.firstIndex(where: { $0.id == todo.id }) {
-            todos[index].isCompleted.toggle()
+    func toggleCompletion(todo: TodoItem) { // ✅ Toggle task completion (like updating state in React)
+        // [5, 2, 8, 1, 9].sort((a, b) => b - a); // Similar to $0 > $1
+        // $0 = First parameter
+        // $1 = Second parameter
+        if let index = todos.firstIndex(where: { $0.id == todo.id }) {// current item - $0.id
+            todos[index].isCompleted.toggle()  // 🔄 Toggle completion status
             print("🔄 Task Toggled: \(todo.title) - Completed: \(todos[index].isCompleted)")
-            saveTodos()
+            saveTodos()  // 💾 Save updated status
         }
     }
 
-    func deleteTodo(at offsets: IndexSet) {  // ✅ Now IndexSet is recognized
+    func deleteTodo(at offsets: IndexSet) {  // 🗑️ Delete tasks
         offsets.forEach { index in
             print("🗑️ Task Deleted: \(todos[index].title)")
         }
-        todos.remove(atOffsets: offsets)
-        saveTodos()
+        todos.remove(atOffsets: offsets)  // ❌ Remove task (like filtering out in React)
+        saveTodos()  // 💾 Save updated list
     }
 
-    private func saveTodos() {
+    private func saveTodos() {  // 💾 Save tasks to persistence
         let todosString = todos.map { "📌 Task: \($0.title) | Completed: \($0.isCompleted)" }
                                 .joined(separator: "\n")
         print("💾 Saving todos:\n\(todosString)")

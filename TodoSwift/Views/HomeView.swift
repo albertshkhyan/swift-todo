@@ -21,7 +21,12 @@ struct HomeView: View { // ✅ Renamed from ContentView to HomeView
 
                 TaskListView(viewModel: viewModel)
             }
+            // navigationTitle("🏡 Home Screen") - Sets the title at the top of the Home screen.
             .navigationTitle("Home")
         }
     }
+}
+
+#Preview {
+    HomeView() // ✅ Previewing the HomeView
 }
