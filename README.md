@@ -3,6 +3,10 @@ Here’s a **simplified and cleaned-up** version of your README:
 
 # **TodoSwift** – A Simple Todo App in SwiftUI 🚀
 
+## 🔗 Related Documentation
+- Check out the full [TodoSwift Demo Guide](./demo.md) for detailed insights and more examples.
+
+
 ## 📚 Learn More About MVVM
 
 For a detailed explanation of the MVVM structure, check out the [MVVM Structure Guide](./MVVM_Structure_Guide.md).
@@ -70,6 +74,7 @@ Licensed under the **MIT License**.
 Fork the repo and submit a pull request!  
 
 📩 **Contact:** [Your GitHub Profile](https://github.com/YOUR_GITHUB_USERNAME)  
+
 
 ---
 
